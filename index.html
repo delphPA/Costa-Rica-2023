@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Costa Rica 2023–2024 · Pura Vida</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-deep: #1a3a2a;
+    --green-mid: #2d6a4f;
+    --green-light: #52b788;
+    --gold: #d4a843;
+    --sand: #f5e6c8;
+    --cream: #fdf8f0;
+    --bark: #6b4226;
+    --sky: #74c0d8;
+    --text: #1e1e1e;
+    --muted: #5a5a4a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--green-deep);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-leaves {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 15% 20%, rgba(82,183,136,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 60% at 85% 70%, rgba(45,106,79,0.25) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 50% at 50% 100%, rgba(212,168,67,0.12) 0%, transparent 50%);
+  }
+
+  /* Decorative jungle silhouette */
+  .jungle-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0,80 C80,20 160,100 240,60 C320,20 400,90 480,50 C560,10 640,80 720,40 C800,0 880,70 960,45 C1040,20 1120,85 1200,55 C1280,25 1360,75 1440,50 L1440,120 L0,120 Z' fill='%23fdf8f0'/%3E%3C/svg%3E") no-repeat bottom;
+    background-size: cover;
+  }
+
+  .hero-content {
+    position: relative;
+    text-align: center;
+    padding: 2rem;
+    animation: fadeUp 1.2s ease both;
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: var(--green-light);
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 10vw, 8rem);
+    color: var(--sand);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
+    color: rgba(245,230,200,0.7);
+    margin-bottom: 2rem;
+  }
+
+  .hero-dates {
+    display: inline-block;
+    border: 1px solid rgba(212,168,67,0.4);
+    color: var(--gold);
+    padding: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    border-radius: 2px;
+  }
+
+  .emoji-row {
+    margin-top: 2.5rem;
+    font-size: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    animation: fadeUp 1.4s ease 0.3s both;
+  }
+
+  /* ── COLLAGE ── */
+  .photo-strip {
+    background: var(--green-deep);
+    padding: 0 0 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .photo-strip .wide {
+    grid-column: 1 / -1;
+  }
+
+  .photo-card {
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    background: var(--green-mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    position: relative;
+  }
+
+  .photo-card.wide { aspect-ratio: 16/7; }
+
+  .photo-label {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 0.75rem;
+    background: rgba(26,58,42,0.85);
+    color: var(--sand);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.6rem;
+    border-radius: 2px;
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--green-deep);
+    margin-bottom: 2.5rem;
+    line-height: 1.15;
+  }
+
+  .divider {
+    width: 50px;
+    height: 2px;
+    background: var(--gold);
+    margin-bottom: 2rem;
+  }
+
+  /* ── ITINERARY TIMELINE ── */
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--green-light), var(--gold));
+  }
+
+  .day-block {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding-left: 1.5rem;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .day-block::before {
+    content: '';
+    position: absolute;
+    left: -2.4rem;
+    top: 0.4rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid var(--cream);
+    box-shadow: 0 0 0 2px var(--gold);
+  }
+
+  .day-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .day-date {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--green-deep);
+    font-weight: 700;
+  }
+
+  .day-loc {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    font-weight: 500;
+  }
+
+  .day-activities {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .day-activities li {
+    font-size: 0.9rem;
+    color: var(--muted);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .day-activities li::before {
+    content: '→';
+    color: var(--green-light);
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 99px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .tag-hotel { background: #fef3c7; color: #92400e; }
+  .tag-drive { background: #e0f2fe; color: #075985; }
+  .tag-activity { background: #d1fae5; color: #065f46; }
+
+  /* ── CALENDAR ── */
+  .calendar-wrap {
+    background: var(--green-deep);
+    padding: 4rem 2rem;
+  }
+
+  .calendar-wrap .section-title { color: var(--sand); }
+  .calendar-wrap .section-label { color: var(--green-light); }
+  .calendar-wrap .divider { background: var(--gold); }
+
+  .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 4px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .cal-day {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 4px;
+    padding: 0.6rem;
+    min-height: 90px;
+  }
+
+  .cal-day.active {
+    background: rgba(82,183,136,0.12);
+    border-color: rgba(82,183,136,0.3);
+  }
+
+  .cal-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: rgba(245,230,200,0.4);
+    margin-bottom: 0.25rem;
+  }
+
+  .cal-day.active .cal-num { color: var(--gold); }
+
+  .cal-event {
+    font-size: 0.6rem;
+    color: var(--green-light);
+    line-height: 1.4;
+    margin-bottom: 0.15rem;
+  }
+
+  .cal-sleep {
+    font-size: 0.55rem;
+    color: rgba(212,168,67,0.7);
+    font-style: italic;
+    margin-top: 0.3rem;
+  }
+
+  /* ── HOTELS ── */
+  .hotels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .hotel-card {
+    border: 1px solid rgba(45,106,79,0.2);
+    border-radius: 8px;
+    padding: 1.5rem;
+    background: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hotel-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--green-mid), var(--gold));
+  }
+
+  .hotel-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(26,58,42,0.12);
+  }
+
+  .hotel-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--green-deep);
+    margin-bottom: 0.5rem;
+  }
+
+  .hotel-dates {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.05em;
+  }
+
+  .hotel-detail {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .hotel-detail span { font-weight: 500; color: var(--text); }
+
+  .hotel-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.75rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid rgba(45,106,79,0.3);
+    padding-bottom: 1px;
+    transition: color 0.15s;
+  }
+  .hotel-link:hover { color: var(--bark); }
+
+  .conf-badge {
+    display: inline-block;
+    background: #f0fdf4;
+    color: #166534;
+    font-size: 0.65rem;
+    font-weight: 500;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #bbf7d0;
+    margin-top: 0.5rem;
+    font-family: monospace;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── ACTIVITIES ── */
+  .activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+
+  .activity-card {
+    background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
+    border-radius: 8px;
+    padding: 1.25rem;
+    color: var(--sand);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .activity-card::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(212,168,67,0.1);
+  }
+
+  .activity-emoji {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .activity-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .activity-date {
+    font-size: 0.7rem;
+    opacity: 0.6;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+  }
+
+  .activity-conf {
+    font-size: 0.65rem;
+    font-family: monospace;
+    background: rgba(255,255,255,0.1);
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+    display: inline-block;
+  }
+
+  .activity-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-top: 0.6rem;
+    font-size: 0.7rem;
+    color: rgba(245,230,200,0.85);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(245,230,200,0.25);
+    padding-bottom: 1px;
+    letter-spacing: 0.05em;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .activity-link:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--green-deep);
+    color: rgba(245,230,200,0.5);
+    text-align: center;
+    padding: 3rem 2rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+  }
+
+  footer strong {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--gold);
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-section.visible { opacity: 1; transform: none; }
+
+  /* ── NAV DOTS ── */
+  .nav-dots {
+    position: fixed;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 100;
+  }
+
+  .nav-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(45,106,79,0.3);
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .nav-dot:hover, .nav-dot.active { background: var(--gold); transform: scale(1.4); }
+
+  @media (max-width: 600px) {
+    .nav-dots { display: none; }
+    .hotels-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV DOTS -->
+<nav class="nav-dots">
+  <button class="nav-dot active" onclick="scrollTo(0,0)" title="Top"></button>
+  <button class="nav-dot" onclick="document.getElementById('itinerary').scrollIntoView({behavior:'smooth'})" title="Itinerary"></button>
+  <button class="nav-dot" onclick="document.getElementById('calendar').scrollIntoView({behavior:'smooth'})" title="Calendar"></button>
+  <button class="nav-dot" onclick="document.getElementById('hotels').scrollIntoView({behavior:'smooth'})" title="Hotels"></button>
+  <button class="nav-dot" onclick="document.getElementById('activities').scrollIntoView({behavior:'smooth'})" title="Activities"></button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-leaves"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Family Adventure · Dec 2023 – Jan 2024</p>
+    <h1 class="hero-title">Costa<br><em>Rica</em></h1>
+    <p class="hero-subtitle">Pura Vida in the jungle, on the volcano &amp; by the sea</p>
+    <div class="hero-dates">December 24, 2023 → January 6, 2024</div>
+    <div class="emoji-row">🦥 🌋 🦜 🏖️ 🌿</div>
+  </div>
+  <div class="jungle-border"></div>
+</section>
+
+<!-- PHOTO HIGHLIGHTS -->
+<section style="background:var(--green-deep); padding: 4px;">
+  <div style="max-width:900px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:4px;">
+    <div class="photo-card" style="background:#1a3a2a; aspect-ratio:1;">
+      <div style="text-align:center;">
+        <div style="font-size:4rem;">🦜</div>
+        <div style="color:var(--green-light);font-size:0.7rem;margin-top:0.5rem;letter-spacing:0.1em;text-transform:uppercase;">Toucan · Monteverde</div>
+      </div>
+    </div>
+    <div class="photo-card" style="background:#2a1a0a; aspect-ratio:1;">
+      <div style="text-align:center;">
+        <div style="font-size:4rem;">🦥</div>
+        <div style="color:var(--gold);font-size:0.7rem;margin-top:0.5rem;letter-spacing:0.1em;text-transform:uppercase;">Sloth · Monteverde</div>
+      </div>
+    </div>
+    <div class="photo-card wide" style="background:linear-gradient(to right, #1a3a2a, #2d6a4f); grid-column:1/-1; aspect-ratio:16/6;">
+      <div style="text-align:center;">
+        <div style="font-size:4rem;">🌋</div>
+        <div style="color:var(--sand);font-family:'Playfair Display',serif;font-size:1.1rem;margin-top:0.5rem;">Arenal Volcano</div>
+        <div style="color:rgba(245,230,200,0.5);font-size:0.75rem;margin-top:0.25rem;">December 27, 2023</div>
+      </div>
+    </div>
+    <div class="photo-card" style="background:#0a1a2a; aspect-ratio:1;">
+      <div style="text-align:center;">
+        <div style="font-size:3rem;">🏝️</div>
+        <div style="color:var(--sky);font-size:0.7rem;margin-top:0.5rem;letter-spacing:0.1em;text-transform:uppercase;">Manuel Antonio</div>
+      </div>
+    </div>
+    <div class="photo-card" style="background:linear-gradient(135deg,#1a3a2a,#0a2a1a); aspect-ratio:1;">
+      <div style="text-align:center;">
+        <div style="font-size:2.5rem;">Costa Rica</div>
+        <div style="font-size:1.5rem;color:var(--gold);">2023 ✦</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ITINERARY -->
+<section class="section fade-section" id="itinerary">
+  <p class="section-label">Day by Day</p>
+  <h2 class="section-title">The Journey</h2>
+  <div class="divider"></div>
+
+  <div class="timeline">
+
+    <div class="day-block">
+      <div class="day-header">
+        <span class="day-date">Sun, Dec 24</span>
+        <span class="day-loc">San José → Monteverde</span>
+        <span class="tag tag-drive">Travel Day</span>
+      </div>
+      <ul class="day-activities">
+        <li>8:00am — Arrive San José Airport</li>
+        <li>Pick up rental car (Expedia/Enterprise)</li>
+        <li>Drive to Monteverde (~4hr)</li>
+        <li>1:00pm — Arrive Monteverde · Check in <strong>El Establo Mountain Hotel</strong></li>
+      </ul>
+    </div>
+
+    <div class="day-block">
+      <div class="day-header">
+        <span class="day-date">Mon, Dec 25 · Christmas</span>
+        <span class="day-loc">Monteverde</span>
+        <span class="tag tag-activity">Adventure Day</span>
+      </div>
+      <ul class="day-activities">
+        <li>8:00am — <strong>SkyTrek, Sky Walk &amp; TreeTram</strong> (self-guided)</li>
+        <li>1:00pm — <strong>Arboreal Tree Climbing Park</strong> (2x kids)</li>
+        <li>Stay: El Establo Mountain Hotel</li>
+      </ul>
+    </div>
+
+    <div class="day-block">
+      <div class="day-header">
+        <span class="day-date">Tue, Dec 26</span>
+        <span class="day-loc">Monteverde → Arenal</span>
+        <span class="tag tag-activity">Wildlife Day</span>
+      </div>
+      <ul class="day-activities">
+        <li>11:00am — Arrive Arenal · Check in <strong>Magic Mountain Hotel</strong></li>
+        <li>3:00pm — <strong>Sloth Tour</strong></li>
+      </ul>
+    </div>
+
+    <div class="day-block">
+      <div class="day-header">
+        <span class="day-date">Wed, Dec 27</span>
+        <span class="day-loc">Arenal</span>
+        <span class="tag tag-activity">Volcano Day</span>
+      </div>
+      <ul class="day-activities">
+        <li>12:00pm — <strong>Hike Arenal Volcano</strong></li>
+        <li>Stay: Magic Mountain Hotel</li>
+      </ul>
+    </div>
+
+    <div class="day-block">
+      <div class="day-header">
+        <span class="day-date">Thu, Dec 28</span>
+        <span class="day-loc">Arenal → San José</span>
+        <span class="tag tag-drive">Travel Day</span>
+      </div>
+      <ul class="day-activities">
+        <li>Drive to San José</li>
+        <li>Check in <strong>Costa Rica Marriott Hotel Hacienda Belen</strong></li>
+      </ul>
+    </div>
+
+    <div class="day-block">
+      <div class="day-header">
+        <span class="day-date">Fri, Dec 29</span>
+        <span class="day-loc">San José → Quepos / Manuel Antonio</span>
+        <span class="tag tag-drive">Travel Day</span>
+      </div>
+      <ul class="day-activities">
+        <li>Drive to Quepos (~3.5hr)</li>
+        <li>Check in <strong>Hotel La Mariposa</strong> · Premier Sunrise room</li>
+      </ul>
+    </div>
+
+    <div class="day-block">
+      <div class="day-header">
+        <span class="day-date">Sat, Dec 30</span>
+        <span class="day-loc">Manuel Antonio</span>
+        <span class="tag tag-activity">Park Day</span>
+      </div>
+      <ul class="day-activities">
+        <li>7:30am — <strong>Private Guided Tour · Manuel Antonio National Park</strong></li>
+        <li>Beach &amp; jungle exploration</li>
+        <li>Stay: Hotel La Mariposa</li>
+      </ul>
+    </div>
+
+    <div class="day-block">
+      <div class="day-header">
+        <span class="day-date">Sun, Dec 31 · New Year's Eve</span>
+        <span class="day-loc">Manuel Antonio → Jacó (Herradura)</span>
+        <span class="tag tag-hotel">NYE</span>
+      </div>
+      <ul class="day-activities">
+        <li>Check out Hotel La Mariposa</li>
+        <li>Check in <strong>Los Sueños Marriott Ocean &amp; Golf</strong></li>
+        <li>Ring in 2024 🥂</li>
+      </ul>
+    </div>
+
+    <div class="day-block">
+      <div class="day-header">
+        <span class="day-date">Mon, Jan 1 · New Year's Day</span>
+        <span class="day-loc">Jacó / Herradura</span>
+        <span class="tag tag-hotel">Resort Day</span>
+      </div>
+      <ul class="day-activities">
+        <li>Stay: Los Sueños Marriott Ocean &amp; Golf</li>
+      </ul>
+    </div>
+
+    <div class="day-block">
+      <div class="day-header">
+        <span class="day-date">Tue, Jan 2 – Fri, Jan 5</span>
+        <span class="day-loc">Jacó / Herradura</span>
+        <span class="tag tag-hotel">Vacation Club</span>
+      </div>
+      <ul class="day-activities">
+        <li>Move to <strong>Marriott Vacation Club</strong></li>
+        <li>Beach, pool &amp; relaxation days</li>
+      </ul>
+    </div>
+
+    <div class="day-block">
+      <div class="day-header">
+        <span class="day-date">Sat, Jan 6</span>
+        <span class="day-loc">San José · Departure</span>
+        <span class="tag tag-drive">Fly Home</span>
+      </div>
+      <ul class="day-activities">
+        <li>Drive to San José</li>
+        <li>Stay: Costa Rica Marriott Hotel Hacienda Belen</li>
+        <li>Return rental car · Fly home ✈️</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- CALENDAR -->
+<div class="calendar-wrap fade-section" id="calendar">
+  <div class="section" style="padding-top:0; padding-bottom:0;">
+    <p class="section-label">At a Glance</p>
+    <h2 class="section-title">Calendar View</h2>
+    <div class="divider"></div>
+  </div>
+
+  <div style="max-width:1000px; margin:0 auto; padding: 0 2rem 4rem;">
+    <p style="color:rgba(245,230,200,0.5);font-size:0.75rem;margin-bottom:1rem;letter-spacing:0.08em;">DECEMBER 2023 — JANUARY 2024</p>
+    <div class="cal-grid">
+
+      <!-- Dec 24 -->
+      <div class="cal-day active">
+        <div class="cal-num">24</div>
+        <div class="cal-event">✈️ Arrive SJO</div>
+        <div class="cal-event">🚗 Drive Monteverde</div>
+        <div class="cal-sleep">El Establo</div>
+      </div>
+
+      <!-- Dec 25 -->
+      <div class="cal-day active">
+        <div class="cal-num">25 🎄</div>
+        <div class="cal-event">🌿 Sky Walk & Tram</div>
+        <div class="cal-event">🧗 Tree Climbing</div>
+        <div class="cal-sleep">El Establo</div>
+      </div>
+
+      <!-- Dec 26 -->
+      <div class="cal-day active">
+        <div class="cal-num">26</div>
+        <div class="cal-event">🚗 → Arenal</div>
+        <div class="cal-event">🦥 Sloth Tour</div>
+        <div class="cal-sleep">Magic Mountain</div>
+      </div>
+
+      <!-- Dec 27 -->
+      <div class="cal-day active">
+        <div class="cal-num">27</div>
+        <div class="cal-event">🌋 Hike Volcano</div>
+        <div class="cal-sleep">Magic Mountain</div>
+      </div>
+
+      <!-- Dec 28 -->
+      <div class="cal-day active">
+        <div class="cal-num">28</div>
+        <div class="cal-event">🚗 → San José</div>
+        <div class="cal-sleep">Marriott Hacienda</div>
+      </div>
+
+      <!-- Dec 29 -->
+      <div class="cal-day active">
+        <div class="cal-num">29</div>
+        <div class="cal-event">🚗 → Quepos</div>
+        <div class="cal-sleep">La Mariposa</div>
+      </div>
+
+      <!-- Dec 30 -->
+      <div class="cal-day active">
+        <div class="cal-num">30</div>
+        <div class="cal-event">🌿 Manuel Antonio</div>
+        <div class="cal-event">🦜 Guided Tour</div>
+        <div class="cal-sleep">La Mariposa</div>
+      </div>
+
+      <!-- Dec 31 -->
+      <div class="cal-day active">
+        <div class="cal-num">31 🥂</div>
+        <div class="cal-event">→ Los Sueños</div>
+        <div class="cal-event">🎉 New Year's Eve</div>
+        <div class="cal-sleep">Los Sueños Marriott</div>
+      </div>
+
+      <!-- Jan 1 -->
+      <div class="cal-day active">
+        <div class="cal-num">1 🌅</div>
+        <div class="cal-event">🌊 Resort Day</div>
+        <div class="cal-sleep">Los Sueños Marriott</div>
+      </div>
+
+      <!-- Jan 2 -->
+      <div class="cal-day active">
+        <div class="cal-num">2</div>
+        <div class="cal-event">🏊 Vacation Club</div>
+        <div class="cal-sleep">Marriott Vacation Club</div>
+      </div>
+
+      <!-- Jan 3 -->
+      <div class="cal-day active">
+        <div class="cal-num">3</div>
+        <div class="cal-event">🏖️ Beach Days</div>
+        <div class="cal-sleep">Marriott Vacation Club</div>
+      </div>
+
+      <!-- Jan 4 -->
+      <div class="cal-day active">
+        <div class="cal-num">4</div>
+        <div class="cal-event">🌴 Relax</div>
+        <div class="cal-sleep">Marriott Vacation Club</div>
+      </div>
+
+      <!-- Jan 5 -->
+      <div class="cal-day active">
+        <div class="cal-num">5</div>
+        <div class="cal-event">🚗 → San José</div>
+        <div class="cal-sleep">Marriott Hacienda</div>
+      </div>
+
+      <!-- Jan 6 -->
+      <div class="cal-day active">
+        <div class="cal-num">6</div>
+        <div class="cal-event">✈️ Fly Home</div>
+        <div class="cal-sleep">LAX</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- HOTELS -->
+<section class="section fade-section" id="hotels">
+  <p class="section-label">Where We Stayed</p>
+  <h2 class="section-title">Accommodations</h2>
+  <div class="divider"></div>
+
+  <div class="hotels-grid">
+
+    <div class="hotel-card">
+      <div class="hotel-name">El Establo Mountain Hotel</div>
+      <div class="hotel-dates">Dec 24 – Dec 26, 2023 &nbsp;·&nbsp; Suite</div>
+      <div class="hotel-detail">📍 <span>1km East of Santa Elena, Monteverde</span></div>
+      <div class="hotel-detail">🔑 <span>Conf: 4199361471</span></div>
+      <div class="hotel-detail">📋 <span>via Booking.com</span></div>
+      <a href="https://booking.com" target="_blank" class="hotel-link">booking.com ↗</a>
+      <div><span class="conf-badge">4199361471</span></div>
+    </div>
+
+    <div class="hotel-card">
+      <div class="hotel-name">Magic Mountain Hotel</div>
+      <div class="hotel-dates">Dec 26 – Dec 28, 2023 &nbsp;·&nbsp; 2 Queen Beds</div>
+      <div class="hotel-detail">📋 <span>Booked direct</span></div>
+      <a href="https://www.hotelmagicmountain.com/" target="_blank" class="hotel-link">hotelmagicmountain.com ↗</a>
+      <div><span class="conf-badge">6GS5XNG</span></div>
+    </div>
+
+    <div class="hotel-card">
+      <div class="hotel-name">Costa Rica Marriott<br>Hotel Hacienda Belen</div>
+      <div class="hotel-dates">Dec 28 – Dec 29, 2023</div>
+      <div class="hotel-detail">📍 <span>700m west from Bridgestone/Firestone, La Ribera de Belen</span></div>
+      <div class="hotel-detail">📋 <span>via Marriott</span></div>
+      <div><span class="conf-badge">82964256</span></div>
+    </div>
+
+    <div class="hotel-card">
+      <div class="hotel-name">Hotel La Mariposa</div>
+      <div class="hotel-dates">Dec 29 – Dec 31, 2023 &nbsp;·&nbsp; Premier Sunrise</div>
+      <div class="hotel-detail">📍 <span>Manuel Antonio Beach, 60601</span></div>
+      <div class="hotel-detail">📋 <span>via Booking.com</span></div>
+      <a href="https://booking.com" target="_blank" class="hotel-link">booking.com ↗</a>
+      <div><span class="conf-badge">4286827335</span></div>
+    </div>
+
+    <div class="hotel-card">
+      <div class="hotel-name">Los Sueños Marriott<br>Ocean &amp; Golf</div>
+      <div class="hotel-dates">Dec 31, 2023 – Jan 2, 2024 &nbsp;·&nbsp; Ocean View Double</div>
+      <div class="hotel-detail">📍 <span>800m west of Herradura Entrance, 61102 Jacó</span></div>
+      <div class="hotel-detail">📋 <span>via Marriott</span></div>
+      <div><span class="conf-badge">84719175</span></div>
+    </div>
+
+    <div class="hotel-card">
+      <div class="hotel-name">Marriott Vacation Club</div>
+      <div class="hotel-dates">Jan 2 – Jan 5, 2024</div>
+      <div class="hotel-detail">📍 <span>800m west of Herradura Entrance, 61102 Jacó</span></div>
+      <div class="hotel-detail">📋 <span>via Marriott</span></div>
+      <div><span class="conf-badge">80027474</span></div>
+    </div>
+
+    <div class="hotel-card">
+      <div class="hotel-name">Costa Rica Marriott<br>Hotel Hacienda Belen</div>
+      <div class="hotel-dates">Jan 5 – Jan 6, 2024</div>
+      <div class="hotel-detail">📋 <span>via Marriott (departure night)</span></div>
+      <div><span class="conf-badge">82973241</span></div>
+    </div>
+
+  </div>
+
+  <!-- Car rental -->
+  <div style="margin-top:2rem; padding: 1.5rem; background: #fff8e6; border-radius:8px; border: 1px solid rgba(212,168,67,0.3);">
+    <p style="font-family:'Playfair Display',serif; font-size:1rem; color:var(--green-deep); margin-bottom:0.5rem;">🚗 Rental Car · Enterprise / Expedia</p>
+    <p style="font-size:0.8rem; color:var(--muted);">Dec 24, 2023 – Jan 6, 2024 &nbsp;·&nbsp; Pick-up: 500m E. And 200 S. From Marriott Hotel De, San Jose</p>
+    <span class="conf-badge" style="margin-top:0.5rem;">Itinerary #72685374785631</span>
+  </div>
+</section>
+
+<!-- ACTIVITIES -->
+<section style="background: #f0f7f2;" id="activities">
+  <div class="section fade-section" style="padding-top:4rem; padding-bottom:4rem;">
+    <p class="section-label">Adventures &amp; Bookings</p>
+    <h2 class="section-title">Activities</h2>
+    <div class="divider"></div>
+
+    <div class="activities-grid">
+
+      <div class="activity-card">
+        <div class="activity-emoji">🌿</div>
+        <div class="activity-name">SkyTrek, Sky Walk &amp; TreeTram</div>
+        <div class="activity-date">DEC 25, 2023 · 8:00 AM · Self-guided (2x)</div>
+        <div class="activity-conf">B-5E5NYVV</div>
+        <a href="https://treetopiapark.com/" target="_blank" class="activity-link">treetopiapark.com ↗</a>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-emoji">🧗</div>
+        <div class="activity-name">Arboreal Tree Climbing Park</div>
+        <div class="activity-date">DEC 25, 2023 · 1:00 PM · 2x Kids (5–12)</div>
+        <div class="activity-conf">B-ZEGZVP8</div>
+        <a href="https://treetopiapark.com/packages/adventure-package/" target="_blank" class="activity-link">treetopiapark.com/arboreal ↗</a>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-emoji">🦥</div>
+        <div class="activity-name">Sloth Tour · Selvatura Park</div>
+        <div class="activity-date">DEC 26, 2023 · 3:00 PM</div>
+        <div class="activity-conf">BR-1082396047</div>
+        <a href="https://www.selvatura.com/tours/the-sloth-sanctuary/" target="_blank" class="activity-link">selvatura.com ↗</a>
+      </div>
+
+      <div class="activity-card" style="background: linear-gradient(135deg, #4a2010, #8b4513);">
+        <div class="activity-emoji">🌋</div>
+        <div class="activity-name">Hike Arenal Volcano</div>
+        <div class="activity-date">DEC 27, 2023</div>
+        <div class="activity-conf" style="background:rgba(255,255,255,0.15);">Self-guided</div>
+        <a href="https://www.sinac.go.cr/EN-US/ac/acahn/pnva/Pages/default.aspx" target="_blank" class="activity-link">Arenal Volcano NP ↗</a>
+      </div>
+
+      <div class="activity-card" style="background: linear-gradient(135deg, #0a3a4a, #1a6a7a);">
+        <div class="activity-emoji">🦜</div>
+        <div class="activity-name">Manuel Antonio Private Guided Tour</div>
+        <div class="activity-date">DEC 30, 2023 · 7:30 AM</div>
+        <div class="activity-conf">197955031</div>
+        <a href="https://manuelantoniopark.net/tour/manuel-antonio-park-guided-tour/" target="_blank" class="activity-link">manuelantoniopark.net ↗</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <strong>Pura Vida 🌺</strong>
+  Costa Rica · December 2023 – January 2024<br>
+  14 days · 6 hotels · 5 activities · countless memories
+</footer>
+
+<script>
+  // Intersection observer for fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-section').forEach(el => observer.observe(el));
+
+  // Nav dot active state
+  const sections = ['hero','itinerary','calendar','hotels','activities'];
+  const dots = document.querySelectorAll('.nav-dot');
+
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY + window.innerHeight / 2;
+    document.querySelectorAll('section, div[id]').forEach((sec, i) => {
+      if (sec.id && sections.includes(sec.id)) {
+        const idx = sections.indexOf(sec.id);
+        if (y >= sec.offsetTop && y < sec.offsetTop + sec.offsetHeight) {
+          dots.forEach(d => d.classList.remove('active'));
+          if (dots[idx]) dots[idx].classList.add('active');
+        }
+      }
+    });
+    if (window.scrollY < 100) {
+      dots.forEach(d => d.classList.remove('active'));
+      dots[0].classList.add('active');
+    }
+  });
+</script>
+</body>
+</html>
